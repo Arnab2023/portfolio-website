@@ -1,0 +1,32 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Smock",
+      "description": "A full-fledged E-commerce clothing store",
+      "image": "http://dummyimage.com/125x100.png/dddddd/000000",
+      "slug": "smock"
+    },
+    {
+      "id": 2,
+      "title": "Movflix",
+      "description": "A comprehensive movie database platform, offering users a rich repository of film information and ratings",
+      "image": "http://dummyimage.com/222x100.png/cc0000/ffffff",
+      "slug": "movflix"
+    },
+    {
+      "id": 3,
+      "title": "Cryptoverse",
+      "description": "A Cryptocurrency data aggregator and analytics platform",
+      "image": "http://dummyimage.com/226x100.png/ff4444/ffffff",
+      "slug": "cryptoverse"
+    },
+    {
+      "id": 4,
+      "title": "Apna Product",
+      "description": "An E-Commerce website built using Redux and Redux Toolkit",
+      "image": "http://dummyimage.com/226x100.png/ff4444/ffffff",
+      "slug": "apna-product"
+    }
+  ]
+}
