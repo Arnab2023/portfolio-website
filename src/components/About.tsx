@@ -1,8 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Nunito } from "next/font/google";
 import Image from "next/image";
-import React from "react";
 
+import { HoverBorderGradient } from "./ui/hover-border-gradient";
 const nunito = Nunito({
   subsets: ["latin"],
   weight: ["500"],
@@ -25,10 +25,10 @@ const About = () => {
           </div>
         </div>
         <div className="flex flex-col">
-          <h1 className=" text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 text-2xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold m-auto">
+          <h1 className=" card-wrapper text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 text-2xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold m-auto">
             About Me
           </h1>
-          <div className=""></div>
+
           <div className="info-card flex flex-col items-center justify-center  bg-gray-900  w-[700px]  rounded-xl ">
             <p
               className={` ${nunito.variable} font-nunito text-[18px] text-white mx-[50px] my-[30px] tracking-[2px]`}

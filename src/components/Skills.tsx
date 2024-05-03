@@ -5,43 +5,156 @@ import Image from "next/image";
 const Skills = () => {
   return (
     <div className="flex flex-col w-full px-[30px]">
-      <h1 className=" py-5  text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 text-2xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold ">
+      <h1 className=" py-5   text-transparent bg-clip-text bg-gradient-to-r to-tertiary-400 from-secondary-600 text-2xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold ">
         Skills
       </h1>
-      <div className="skill-container flex flex-col ">
-        <div className="framework  flex ">
-          <Marquee speed={100}>
+      <div className="skill-container flex flex-col w-full ">
+        <div className="framework flex flex-col  w-[70%]  m-auto">
+          <p className=" mt-5 md:mt-0 text-[50px] md:text-[50px] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400  animate">
+            Libraries/Frameworks
+          </p>
+
+          <Marquee speed={100} className="overflow-hidden">
             <Image
               src="/images/mongodb.png"
               alt=""
-              height={100}
-              width={100}
-              className="p-4"
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
             ></Image>
             <Image
               src="/images/express.png"
               alt=""
-              height={100}
-              width={100}
-              className="p-4"
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
             ></Image>
             <Image
               src="/images/react.png"
               alt=""
-              height={100}
-              width={100}
-              className="p-4"
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
             ></Image>
             <Image
-              src="/images/node.png"
+              src="/images/nodejs.png"
               alt=""
-              height={100}
-              width={100}
-              className="p-4"
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125 "
+            ></Image>
+            <Image
+              src="/images/mysql.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <div className="h-150 w-150 bg-white rounded-full relative ">
+              <Image
+                src="/images/next.svg"
+                alt=""
+                height={150}
+                width={150}
+                className="p-6 hover:transform hover:scale-125 "
+              ></Image>
+            </div>
+            <Image
+              src="/images/bootstrap.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <Image
+              src="/images/tailwind.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
             ></Image>
           </Marquee>
         </div>
-        <div className="languages"></div>
+
+        <div className="languages mt-5 flex flex-col w-[70%]  m-auto">
+          <p className=" mt-5 md:mt-0 text-[50px] md:text-[50px] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+            Languages
+          </p>
+          <Marquee speed={100} direction="right" className="overflow-hidden">
+            <Image
+              src="/images/c++.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <Image
+              src="/images/python.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <Image
+              src="/images/html.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <Image
+              src="/images/css.png"
+              alt=""
+              height={175}
+              width={175}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <Image
+              src="/images/sass.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <Image
+              src="/images/javascript.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+
+            <Image
+              src="/images/typescript.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+          </Marquee>
+        </div>
+
+        <div className="other-skills flex  flex-col mt-5  w-[70%]  m-auto ">
+          <p className="mt-5 md:mt-0 text-[50px] md:text-[50px] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+            Other Skills
+          </p>
+          <div className="flex">
+            <Image
+              src="/images/github.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+            <Image
+              src="/images/git.png"
+              alt=""
+              height={150}
+              width={150}
+              className="p-6 hover:transform hover:scale-125"
+            ></Image>
+          </div>
+        </div>
         <div className="libraries"></div>
       </div>
     </div>

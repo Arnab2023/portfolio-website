@@ -1,0 +1,61 @@
+import Image from "next/image";
+import React from "react";
+
+const Education = () => {
+  return (
+    <div className="flex flex-col w-full px-[30px]">
+      <h1 className=" py-5   text-transparent bg-clip-text bg-gradient-to-r to-tertiary-400 from-secondary-600 text-2xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold ">
+        Education
+      </h1>
+      <div className=" college flex  px-[5px] gap-[50px] mt-5">
+        <div className="inst-image  ">
+          <Image
+            width={150}
+            height={150}
+            alt=""
+            src="/images/college.jpg"
+            className="rounded-full  "
+          ></Image>
+        </div>
+        <div className="inst-text flex flex-col  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400  animate">
+          <p className="font-extrabold text-[24px] sm:text-3xl lg:text-[40px] lg:leading-normal">
+            Sir M Visvesvaraya Institute of Technology
+          </p>
+          <p className="text-[25px] font-semibold mt-3 mb-3">
+            Visvesvarya Institute of Technology
+          </p>
+          <p className="text-[25px] font-semibold  mb-3">
+            Bachelor of Engineering in Electronics and Communication Engineering
+          </p>
+          <p className="text-[25px] font-semibold  mb-3">Aug 2019 - May 2023</p>
+          <p className="text-[25px] font-semibold  mb-3">CGPA - 8.3</p>
+        </div>
+      </div>
+      <div className=" school flex  px-[5px] gap-[50px] mt-5">
+        <div className="inst-image  ">
+          <Image
+            width={150}
+            height={150}
+            alt=""
+            src="/images/school.png"
+            className="rounded-full  "
+          ></Image>
+        </div>
+        <div className="inst-text flex flex-col  bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400  animate">
+          <p className="font-extrabold text-[24px] sm:text-3xl lg:text-[40px] lg:leading-normal">
+            Kendriya Vidyalaya No. 1, Delhi Cantt-10
+          </p>
+          <p className="text-[25px] font-semibold mt-3 mb-3">
+            Class XII (AISSCE)
+          </p>
+          <p className="text-[25px] font-semibold  mb-3">
+            April 2018 - March 2019
+          </p>
+          <p className="text-[25px] font-semibold  mb-3">Aggregate: 84.2%</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Education;
