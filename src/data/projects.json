@@ -4,29 +4,61 @@
       "id": 1,
       "title": "Smock",
       "description": "A full-fledged E-commerce clothing store",
-      "image": "http://dummyimage.com/125x100.png/dddddd/000000",
-      "slug": "smock"
+      "image": [
+        "/images/smock 1.png",
+        "/images/smock 2.png",
+        "/images/smock 3.png",
+        "/images/smock 4.png",
+        "/images/smock 5.png"
+      ],
+      "slug": "smock",
+      "deploy": "",
+      "frontend": "https://github.com/Arnab2023/smock-E-commerce-website-frontend-",
+      "backend": "https://github.com/Arnab2023/smock-E-commerce-website-backend-",
+      "techUsed": "MERN  Redux  Redux Toolkit  Jwt  RazorPay  Firebase  tailwind "
     },
     {
       "id": 2,
       "title": "Movflix",
       "description": "A comprehensive movie database platform, offering users a rich repository of film information and ratings",
-      "image": "http://dummyimage.com/222x100.png/cc0000/ffffff",
-      "slug": "movflix"
+      "image": [
+        "/images/mov ss1.png",
+        "/images/mov ss2.png",
+        "/images/mov ss3.png",
+        "/images/mov ss4.png"
+      ],
+      "slug": "movflix",
+      "deploy": "https://movies-app-beta-mauve.vercel.app/",
+      "frontend": "https://github.com/Arnab2023/movflix",
+      "backend": "",
+      "techUsed": "ReactJS  RestApi  SaaS  React-Youtube  InfiniteScroll"
     },
     {
       "id": 3,
       "title": "Cryptoverse",
       "description": "A Cryptocurrency data aggregator and analytics platform",
-      "image": "http://dummyimage.com/226x100.png/ff4444/ffffff",
-      "slug": "cryptoverse"
+      "image": [
+        "/images/crypto ss1.png",
+        "/images/crypto ss2.png",
+        "/images/crypto ss3.png",
+        "/images/crypto ss4.png"
+      ],
+      "slug": "cryptoverse",
+      "deploy": "https://cryptoverse-sage-psi.vercel.app/",
+      "frontend": "https://github.com/Arnab2023/cryptoverse",
+      "backend": "",
+      "techUsed": "RectJs  RestApi  ChartJS  Vanila CSS"
     },
     {
       "id": 4,
       "title": "Apna Product",
       "description": "An E-Commerce website built using Redux and Redux Toolkit",
-      "image": "http://dummyimage.com/226x100.png/ff4444/ffffff",
-      "slug": "apna-product"
+      "image": ["/images/ap 1.png", "/images/ap 2.png"],
+      "slug": "apna-product",
+      "deploy": "",
+      "frontend": "https://github.com/Arnab2023/Apna-Product",
+      "backend": "https://github.com/Arnab2023/Apna-Product",
+      "techUsed": "MERN  Redux  Redux Toolkit  Bootstrap  RazorPay"
     }
   ]
 }

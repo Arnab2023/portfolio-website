@@ -1,21 +1,39 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+import AllInclusiveIcon from "@mui/icons-material/AllInclusive";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import React, { useEffect } from "react";
 import projectData from "../data/projects.json";
 import Link from "next/link";
 import { BackgroundGradient } from "./ui/background-gradient";
+import Image from "next/image";
+import { useState } from "react";
+import ProjectModal from "@/components/ProjectModal";
+import CloseIcon from "@mui/icons-material/Close";
+import Tooltip from "@mui/material/Tooltip";
+import Fade from "@mui/material/Fade";
+
+import TailwindCarousel from "./TailwindCarousel";
 
 interface Project {
   id: number;
   title: string;
   description: string;
   slug: string;
+  image: string[];
+  deploy: string;
+  frontend: string;
+  backend: string;
+  techUsed: string;
 }
 const FeaturedProjects = () => {
+  const [modalOpen, setModalOpen] = useState<number>();
   const featuredProjects = projectData.projects.filter(
     (project: Project) => project.description
   );
+
   return (
-    <div className="py-12 bg-gray-900">
+    <div className=" max-sm:pt-[70px] h-auto py-12 ">
       <div>
         <div className="text-center">
           <h2 className="text-base text-teal-600 font-semibold tracking-wide uppercase">
@@ -28,9 +46,100 @@ const FeaturedProjects = () => {
       </div>
       <div className="mt-10 mx-8">
         <div className="grid  sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
-          {featuredProjects.map((project: Project) => (
+          {featuredProjects.map((project: Project, index) => (
             <div key={project.id} className="flex justify-center">
+              {/* -----------------------------------------------------------------modal --------------------------------------------------------------*/}
+
+              {modalOpen === index && (
+                <ProjectModal>
+                  <div className="flex justify-between px-5">
+                    <h1 className="text-2xl font-bold">{project?.title}</h1>
+                    <button type="button" onClick={() => setModalOpen(-1)}>
+                      <CloseIcon />
+                    </button>
+                  </div>
+                  <div className="flex mx-auto">
+                    <TailwindCarousel index={index} />
+                  </div>
+
+                  <div className="flex flex-col gap-2 px-5">
+                    <p className="text-[20px] mt-4 ">
+                      {" "}
+                      Description: {project?.description}
+                    </p>
+                    <p className="text-[20px] mt-2">
+                      Technology Used: {project?.techUsed}
+                    </p>
+
+                    <div className="links text-[20px] mt-2 flex justify-center w-full gap-[20px] mb-4">
+                      <Tooltip
+                        title="Deployed link"
+                        placement="top"
+                        arrow
+                        TransitionComponent={Fade}
+                        TransitionProps={{ timeout: 600 }}
+                      >
+                        <div className="deploy flex flex-col items-center justify-center h-[48px] w-[48px] rounded-full bg-white text-gray-900">
+                          <a href={project.deploy} target="_blank" className="">
+                            <AllInclusiveIcon />
+                          </a>
+                        </div>
+                      </Tooltip>
+
+                      <Tooltip
+                        title="Frontend"
+                        placement="top"
+                        arrow
+                        TransitionComponent={Fade}
+                        TransitionProps={{ timeout: 600 }}
+                      >
+                        <div className="frontend flex flex-col items-center justify-center h-[48px] w-[48px] rounded-full bg-white text-gray-900 ">
+                          <a
+                            href={project?.frontend}
+                            target="_blank"
+                            className=""
+                          >
+                            <GitHubIcon />
+                          </a>
+                        </div>
+                      </Tooltip>
+
+                      {project?.backend.length > 2 && (
+                        <Tooltip
+                          title="Backend"
+                          arrow
+                          placement="top"
+                          TransitionComponent={Fade}
+                          TransitionProps={{ timeout: 600 }}
+                        >
+                          <div
+                            data-tooltip-target="tooltip-default"
+                            className="backend flex flex-col items-center justify-center h-[48px] w-[48px] rounded-full bg-white text-gray-900"
+                          >
+                            <a
+                              href={project?.backend}
+                              target="_blank"
+                              className=""
+                            >
+                              <GitHubIcon />
+                            </a>
+                          </div>
+                        </Tooltip>
+                      )}
+                    </div>
+                  </div>
+                </ProjectModal>
+              )}
+              {/*------------------------------------------------------------ card ------------------------------------------------------------*/}
               <BackgroundGradient className="flex flex-col rounded-[22px] bg-white dark:bg-zinc-900 overflow-hidden h-full max-w-sm">
+                <div className="img-prj">
+                  <Image
+                    src={project?.image[0]}
+                    height={400}
+                    width={400}
+                    alt={project.title}
+                  ></Image>
+                </div>
                 <div className="p-4 sm:p-6 flex flex-col items-center text-center flex-grow">
                   <p className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
                     {project.title}
@@ -38,25 +147,21 @@ const FeaturedProjects = () => {
                   <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-grow">
                     {project.description}
                   </p>
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="text-white"
+
+                  <button
+                    type="button"
+                    className="text-white  cursor-pointer"
+                    onClick={() => {
+                      setModalOpen(index);
+                    }}
                   >
-                    Learn More
-                  </Link>
+                    Show More
+                  </button>
                 </div>
               </BackgroundGradient>
             </div>
           ))}
         </div>
-      </div>
-      <div className="mt-20 text-center">
-        <Link
-          href={"/projects"}
-          className="px-4 py-2 rounded border border-neutral-600 text-neutral-700 bg-white hover:bg-gray-100 transition duration-200"
-        >
-          View All Projects
-        </Link>
       </div>
     </div>
   );
